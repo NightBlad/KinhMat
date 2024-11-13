@@ -367,7 +367,7 @@
     bottom: 0.02px;
     left: 0px;
     background-color: #eff8ff;
-    width: 1440px;
+    width: 1480px;
     height: 766px;
     display: flex;
     flex-direction: column;
@@ -1040,7 +1040,7 @@
 .breadcrumb-parent {
     position: absolute;
     top: 214px;
-    left: 0px;
+    left: -120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1052,7 +1052,7 @@
     width: 100%;
     position: relative;
     background-color: #fff;
-    height: 1801px;
+    height: 1800px;
     overflow: hidden;
     text-align: left;
     font-size: 14px;
