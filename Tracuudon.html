@@ -4,8 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tra cứu đơn hàng</title>
-    <link rel="stylesheet" href="Tracuudon.css">
+    <link rel="stylesheet" href="./Tracuudon.css">
     
+
+    <style>
+    /* Tổng quan */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    /* Khuyến mãi */
+    .promo-bar {
+        background-color: #e0e0e0;
+        text-align: center;
+        padding: 4px 0;
+        font-size: 14px;
+        height: 26px;
+    }
+
+    /* Lưới 12 cột */
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* Header chính */
+    .header {
+        grid-column: span 12;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 20px;
+        height: 86px;
+        border-bottom: 1px solid #e0e0e0;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+        width: 95px;
+        height: 40px;
+        grid-column: span 4;
+        justify-content: center
+    }
+    .logo2 {
+        width: 95px;
+        height: 40px;
+        grid-column: span 4;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        grid-column: span 6;
+    }
+
+    .nav-menu a {
+        margin: 0 15px;
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .nav-menu a:hover {
+        color: blue;
+        text-decoration: underline;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .icons {
+        display: flex;
+        gap: 20px;
+        grid-column: span 2;
+        justify-content: center;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+        grid-column: span 3;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        gap: 5px;
+        height: 9px;
+        margin-top: 100px;
+    }
+
+    .breadcrumb a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+        color: blue;
+        text-decoration: underline;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Tra cứu đơn hàng */
+    .order-lookup {
+        grid-column: span 6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+    }
+
+    .order-lookup h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .input-field {
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 2px solid black;
+        text-align: center;
+    }
+
+    .input-field input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        text-align: center;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .input-field input::placeholder {
+        color: gray;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 15px;
+        background-color: orange;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background-color: blue;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    }
+    /* Khoảng trống để giữ khoảng cách */
+    .spacer {
+      grid-column: span 3;
+      height: 250px; /* Điều chỉnh chiều cao để vừa với thiết kế */
+    }
+
+    /* Phần bổ sung */
+    .feedback-section {
+      grid-column: span 12;
+      background-color: #EFF8FF;
+      margin-top: 140px;
+      padding: 60px 20px 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    /* Phần đầu tiên 6 ô */
+    .feedback-left {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .feedback-left img {
+      width: 100px; /* Kích thước logo */
+      margin-bottom: 20px;
+    }
+
+    .feedback-left p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .feedback-button {
+      background-color: orange;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .feedback-button:hover {
+      background-color: blue;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Phần thứ hai 3 ô */
+    .feedback-center {
+      flex: 1 1 200px;
+      padding: 0 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      font-size: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-info img {
+      width: 24px;
+      margin-right: 10px;
+    }
+
+    /* Phần thứ ba 3 ô */
+    .social-links {
+      flex: 1 1 100px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px; 
+    }
+
+    .social-links a img {
+      width: 30px;
+    }   
+    
+    /* end */
+    /* end-section */
+      .end-section {
+        grid-column: span 12;
+        
+        padding: 60px 20px 30px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      /* Phần bên trái 3 cột */
+      .end-left {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .end-left h2 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .end-left p {
+        font-size: 14px;
+      }
+
+      .end-left .map img {
+        width: 373px;
+        height: 135px;
+      }
+
+      /* Phần bên phải 9 cột */
+      .end-right {
+        grid-column: span 9;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Phần trên 75% */
+      .end-right-top {
+        display: grid;
+        grid-template-columns: repeat(3, 4fr);
+        gap: 20px;
+      }
+
+      .end-section-column h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .end-section-column a {
+        display: block;
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+
+      .end-section-column a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      /* Phần dưới 25% */
+      .end-right-bottom {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .logo-certification img {
+        width: 189px;
+        height: 72px;
+      }
+
+      .legal-info h2 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .legal-info p {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+
+     
+  </style>
+>>>>>>> d0e68fca33f50ec247d42a22c78fe57c4619179e
 </head>
 <body>
 
