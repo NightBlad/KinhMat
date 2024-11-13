@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu đơn hàng</title>
+    <style>
+    /* Tổng quan */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    
+
+    /* Khuyến mãi */
+    .promo-bar {
+        background-color: #e0e0e0;
+        text-align: center;
+        padding: 4px 0;
+        font-size: 14px;
+        height: 26px;
+    }
+
+    /* Lưới 12 cột */
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+
+    /* Header chính */
+    .header {
+        grid-column: span 12;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        height: 86px;
+        border-bottom: 1px solid #e0e0e0;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+        width: 95px;
+        height: 40px;
+        grid-column: span 4;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        grid-column: span 6;
+    }
+
+    .nav-menu a {
+        margin: 0 15px;
+        color: black;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .nav-menu a:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    .icons {
+        display: flex;
+        gap: 20px;
+        grid-column: span 2;
+        justify-content: end;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+        grid-column: span 3;
+        display: flex;
+        justify-content: center;
+        font-size: 12px;
+        gap: 5px;
+        height: 9px;
+        margin-top: 100px;
+    }
+
+    .breadcrumb a {
+        color: black;
+        text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    /* Tra cứu đơn hàng */
+    .order-lookup {
+        grid-column: span 6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 150px;
+    }
+
+    .order-lookup h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .input-field {
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 2px solid black;
+        text-align: center;
+    }
+
+    .input-field input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        text-align: center;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .input-field input::placeholder {
+        color: gray;
+    }
+
+    .search-button {
+        width: 100%;
+        padding: 15px;
+        background-color: orange;
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background-color: blue;
+    }
+    /* Khoảng trống để giữ khoảng cách */
+    .spacer {
+      grid-column: span 3;
+      height: 250px; /* Điều chỉnh chiều cao để vừa với thiết kế */
+    }
+
+    /* Phần bổ sung */
+    .feedback-section {
+      grid-column: span 12;
+      background-color: #EFF8FF;
+      margin-top: 140px;
+      padding: 60px 20px 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    /* Phần đầu tiên 6 ô */
+    .feedback-left {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .feedback-left img {
+      width: 100px; /* Kích thước logo */
+      margin-bottom: 20px;
+    }
+
+    .feedback-left p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .feedback-button {
+      background-color: orange;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .feedback-button:hover {
+      background-color: blue;
+    }
+
+    /* Phần thứ hai 3 ô */
+    .feedback-center {
+      flex: 1 1 200px;
+      padding: 0 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      font-size: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-info img {
+      width: 24px;
+      margin-right: 10px;
+    }
+
+    /* Phần thứ ba 3 ô */
+    .social-links {
+      flex: 1 1 100px;
+      display: flex;
+      align-items: center;
+      gap: 10px; 
+    }
+
+    .social-links a img {
+      width: 30px;
+    }   
+    
+    /* end */
+    .end-section {
+      grid-column: span 12;
+      background-color: #EFF8FF;
+      margin-top: 270px;
+      padding: 60px 20px 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Thanh khuyến mãi -->
+  <div class="promo-bar">Giảm 30% các sản phẩm dịp đại lễ 30/4 & 1/5</div>
+
+  <!-- Container lưới 12 cột -->
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <img src="./public/images/Logo.png" alt="Logo" class="logo">
+      <nav class="nav-menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Bộ sưu tập</a>
+        <a href="#">Tin tức</a>
+        <a href="#">Tra cứu đơn</a>
+        <a href="#">Liên hệ</a>
+      </nav>
+      <div class="icons">
+        <img src="./public/images/Icon1.png" alt="Tìm kiếm" width="24">
+        <img src="./public/images/Icon2.png" alt="Giỏ hàng" width="24">
+      </div>
+    </header>
+
+    
+        <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="#">Trang chủ</a>
+        <span>&gt;</span>
+        <a href="#">Tra cứu đơn</a>
+    </div>
+
+        <!-- Tra cứu đơn hàng -->
+    <section class="order-lookup">
+      <h2>Tra cứu đơn hàng theo thông tin</h2>
+      <div class="input-field">
+        <input type="text" placeholder="Nhập số điện thoại*" required>
+      </div>
+      <div class="input-field">
+        <input type="text" placeholder="Mã đơn hàng*" required>
+      </div>
+      <button class="search-button">Tìm kiếm đơn hàng</button>
+    </section>
+    
+    <!-- Phần khoảng trống chiếm 3 ô bên phải -->
+    <div class="spacer"></div>
+
+    <!-- Phần bổ sung -->
+    <section class="feedback-section">
+      <!-- Phần đầu tiên 6 ô -->
+      <div class="feedback-left">
+        <img src="./public/images/logo.png" alt="Logo">
+        <p>Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
+        <button class="feedback-button">ĐÓNG GÓP Ý KIẾN</button>
+      </div>
+
+      <!-- Phần thứ hai 3 ô -->
+      <div class="feedback-center">
+        <div class="contact-info">
+          <img src="./public/images/Icon3.png" alt="Phone Icon">
+          <div>
+            <p>Hotline</p>
+            <h2>036.8523.966</h2>
+          </div>
+        </div>
+        <div class="contact-info">
+          <img src="./public/images/Icon4.png" alt="Email Icon">
+          <div>
+            <p>Email</p>
+            <h2>hotro@kinhmatkool.vn</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phần thứ ba 3 ô -->
+      <div class="social-links">
+        <a href="#"><img src="./public/images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="./public/images/zalo.png" alt="Zalo"></a>
+        <a href="#"><img src="./public/images/youtube.png" alt="YouTube"></a>
+        <a href="#"><img src="./public/images/tiktok.png" alt="Tiktok"></a>
+      </div>
+    </section>
+    <section class="end-section">
+
+    </section>
+    
+    </div>  
+
+</body>
+</html>
