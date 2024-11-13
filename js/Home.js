@@ -82,3 +82,38 @@ const countdownInterval = setInterval(() => {
         document.getElementById("seconds").textContent = "00";
     }
 }, 1000);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderContainer = document.querySelector('.sliderKinh');
+    const slides = sliderContainer.querySelectorAll('img');
+    const ellipses = document.querySelectorAll('.slider-child');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateY(${(i - index) * 100}%)`;
+        });
+        ellipses.forEach((ellipse, i) => {
+            ellipse.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    // Initialize the slider
+    showSlide(currentIndex);
+
+    // Set interval for sliding effect
+    setInterval(nextSlide, 4000); // Change slide every 4 seconds
+
+    // Add click event listeners to ellipses
+    ellipses.forEach((ellipse, index) => {
+        ellipse.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
+        });
+    });
+});
