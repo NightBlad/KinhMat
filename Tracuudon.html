@@ -38,7 +38,7 @@
         grid-column: span 12;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 0 20px;
         height: 86px;
         border-bottom: 1px solid #e0e0e0;
@@ -46,6 +46,12 @@
     }
 
     .logo {
+        width: 95px;
+        height: 40px;
+        grid-column: span 4;
+        justify-content: center
+    }
+    .logo2 {
         width: 95px;
         height: 40px;
         grid-column: span 4;
@@ -67,13 +73,14 @@
     .nav-menu a:hover {
         color: blue;
         text-decoration: underline;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     }
 
     .icons {
         display: flex;
         gap: 20px;
         grid-column: span 2;
-        justify-content: end;
+        justify-content: center;
     }
 
     /* Breadcrumb */
@@ -95,6 +102,7 @@
     .breadcrumb a:hover {
         color: blue;
         text-decoration: underline;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     }
 
     /* Tra cứu đơn hàng */
@@ -144,6 +152,7 @@
 
     .search-button:hover {
         background-color: blue;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     }
     /* Khoảng trống để giữ khoảng cách */
     .spacer {
@@ -191,6 +200,7 @@
 
     .feedback-button:hover {
       background-color: blue;
+      box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     }
 
     /* Phần thứ hai 3 ô */
@@ -215,7 +225,7 @@
     .social-links {
       flex: 1 1 100px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px; 
     }
 
@@ -224,16 +234,97 @@
     }   
     
     /* end */
-    .end-section {
-      grid-column: span 12;
-      background-color: #EFF8FF;
-      margin-top: 270px;
-      padding: 60px 20px 30px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-    }
+    /* end-section */
+      .end-section {
+        grid-column: span 12;
+        
+        padding: 60px 20px 30px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      /* Phần bên trái 3 cột */
+      .end-left {
+        grid-column: span 3;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .end-left h2 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .end-left p {
+        font-size: 14px;
+      }
+
+      .end-left .map img {
+        width: 373px;
+        height: 135px;
+      }
+
+      /* Phần bên phải 9 cột */
+      .end-right {
+        grid-column: span 9;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Phần trên 75% */
+      .end-right-top {
+        display: grid;
+        grid-template-columns: repeat(3, 4fr);
+        gap: 20px;
+      }
+
+      .end-section-column h2 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .end-section-column a {
+        display: block;
+        font-size: 14px;
+        color: black;
+        text-decoration: none;
+        margin-bottom: 5px;
+      }
+
+      .end-section-column a:hover {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      /* Phần dưới 25% */
+      .end-right-bottom {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .logo-certification img {
+        width: 189px;
+        height: 72px;
+      }
+
+      .legal-info h2 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .legal-info p {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+
+     
   </style>
 </head>
 <body>
@@ -319,9 +410,69 @@
         <a href="#"><img src="./public/images/tiktok.png" alt="Tiktok"></a>
       </div>
     </section>
-    <section class="end-section">
 
-    </section>
+  <section class="end-section container">
+      <!-- Phần bên trái 3 cột -->
+      <div class="end-left">
+        <div class="opening-hours">
+          <h2>Giờ mở cửa</h2>
+          <p>Mon - Sun: 8:30 - 22:00</p>
+        </div>
+        <div class="store-location">
+          <h2>Store Hà Nội</h2>
+          <p>115 Kim Mã, Quận Ba Đình, Hà Nội</p>
+        </div>
+        <div class="map">
+          <img src="./public/images/map.png" alt="Bản đồ" />
+        </div>
+      </div>
+
+      <!-- Phần bên phải 9 cột -->
+      <div class="end-right">
+        <!-- Phần trên chiếm 75% -->
+        <div class="end-right-top">
+          <!-- Cụm 1 -->
+          <div class="end-section-column">
+            <h2>Sản phẩm</h2>
+            <a href="#">Gọng kính cận</a>
+            <a href="#">Gọng kính râm</a>
+            <a href="#">Tròng kính</a>
+            <a href="#">Phụ kiện</a>
+          </div>
+          <!-- Cụm 2 -->
+          <div class="end-section-column">
+            <h2>Chính sách</h2>
+            <a href="#">Khám mắt miễn phí</a>
+            <a href="#">Bảo hành</a>
+            <a href="#">Đổi trả</a>
+            <a href="#">Vận chuyển</a>
+            <a href="#">Thu cũ - Đổi mới</a>
+            <a href="#">Chính sách bảo mật</a>
+          </div>
+          <!-- Cụm 3 -->
+          <div class="end-section-column">
+            <h2>Tin tức</h2>
+            <a href="#">Bảo vệ mắt</a>
+            <a href="#">Kiến thức</a>
+            <a href="#">Sức khỏe</a>
+            <a href="#">Thời trang</a>
+          </div>
+        </div>
+
+        <!-- Phần dưới chiếm 25% -->
+        <div class="end-right-bottom">
+          <div class="logo-certification">
+            <img src="./public/images/certification-logo.png" alt="Logo kiểm định" />
+          </div>
+          <div class="legal-info">
+            <h2>Đại diện pháp luật</h2>
+            <p>Ông Nguyễn Văn A. Ngày cấp giấy phép: 14/08/2018</p>
+            <p>Ngày hoạt động: 05/09/2029</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
     
     </div>  
 
