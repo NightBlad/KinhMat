@@ -1087,3 +1087,6 @@ input[type="text"], input[type="email"] {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Thêm bóng khi chọn */
   }
   
+  a {
+    text-decoration: none;
+}
