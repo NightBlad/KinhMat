@@ -15,7 +15,7 @@ document.querySelectorAll(".quantity-button").forEach(button => {
     }
     quantityDisplay.textContent = quantity;
 
-    // Tính toán tổng tiền cho sản phẩm đó (giá cố định 1,990,000 cho mỗi sản phẩm)
+    // Tính toán tổng tiền cho sản phẩm đó
     const productTotal = unitPrice * quantity;
     priceDisplay.textContent = `${productTotal.toLocaleString()} đ`;
 
@@ -46,11 +46,31 @@ document.getElementById("checkout-button").addEventListener("click", () => {
   const phone = document.querySelector('input[placeholder="Nhập số điện thoại"]').value;
   const email = document.querySelector('input[placeholder="Nhập email"]').value;
   const address = document.querySelector('input[placeholder="Nhập địa chỉ chi tiết"]').value;
+  const gender = document.querySelector('input[name="gender"]:checked'); // Kiểm tra radio button đã chọn
 
-  if (!name || !phone || !email || !address) {
-    alert("Vui lòng điền đầy đủ thông tin!");
-  } else {
-    alert("Đơn hàng của bạn đã được đặt thành công!");
-    // Tiến hành gửi đơn hàng ở đây
+  // Kiểm tra các trường bắt buộc
+  if (!name || !phone || !email || !address || !gender) {
+    alert("Vui lòng điền đầy đủ thông tin và chọn giới tính!");
+    return;
   }
+
+  // Kiểm tra họ và tên chỉ được chứa chữ cái và khoảng trắng
+  if (!/^[A-Za-z\sÀ-ỹ]+$/.test(name)) {
+    alert("Họ và tên chỉ được chứa chữ cái và khoảng trắng!");
+    return;
+  }
+
+  //check phone number and don't have special character,letter,space, length = 10
+  else if (!phone.match(/^\d{10}$/)) {
+    alert("Số điện thoại không hợp lệ!");
+    return;
+  }
+  //check email
+  else if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+    alert("Email không hợp lệ!");
+    return;
+  }
+  // Nếu tất cả đều hợp lệ
+  alert("Đơn hàng của bạn đã được đặt thành công!");
+  // Tiến hành gửi đơn hàng ở đây
 });
