@@ -5,6 +5,7 @@
   	<meta name="viewport" content="initial-scale=1, width=device-width">
   	
   	<link rel="stylesheet"  href="./detail.css" />
+	<script src="./js/detail.js"></script>
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus Jakarta Sans:wght@400;700&display=swap" />
@@ -41,12 +42,22 @@
             						</div>
           					</div>
           					<div class="chng-ti-lun-container">
-            						<p class="chng-ti-lun">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để4</p>
+            						<p class="chng-ti-lun">Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để</p>
             						<p class="c-th-nng">có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
           					</div>
           					<div class="ng-gp-kin-wrapper">
-            						<div class="ng-gp">ĐÓNG GÓP Ý KIẾN</div>
+            						<a href="#" onclick="toggleCommentBox()">
+										<div class="ng-gp">ĐÓNG GÓP Ý KIẾN</div>
+									</a>
           					</div>
+							<div id="comment-section" style="display: none; margin-top: 10px;">
+								<textarea id="comment-box" rows="4" cols="50" placeholder="Viết ý kiến của bạn ở đây..."></textarea>
+								<br>
+								<div id="warning" style="color: red; display: none; margin-top: 5px;">
+									Vui lòng không để trống phần bình luận!
+								</div>
+								<button onclick="submitComment()" style="display: flex; margin-left: 160px;">Gửi</button>
+							</div>
         				</div>
         				<div class="frame-group">
           					<div class="icon-parent">
@@ -67,13 +78,13 @@
           					</div>
         				</div>
         				<div class="icon-parent">
-          					<img class="icon" alt="" src="./public/images/icon(3).png">
+          					<a href="#"><img class="icon" alt="" src="./public/images/icon(3).png"></a>
           					
-          					<img class="icon" alt="" src="./public/images/icon(4).png">
+          					<a href="#"><img class="icon" alt="" src="./public/images/icon(4).png"></a>
           					
-          					<img class="icon" alt="" src="./public/images/icon(5).png">
+          					<a href="#"><img class="icon" alt="" src="./public/images/icon(5).png"></a>
           					
-          					<img class="icon" alt="" src="./public/images/icon(6).png">
+          					<a href="#"><img class="icon" alt="" src="./public/images/icon(6).png"></a>
           					
         				</div>
       			</div>
@@ -93,31 +104,31 @@
           					</div>
           					<div class="frame-parent2">
             						<div class="frame-parent3">
-              							<div class="frame-wrapper">
-                								<div class="gi-m-ca-parent">
-                  									<div class="sn-phm">Sản phẩm</div>
-                  									<div class="gng-knh-cn">Gọng kính cận</div>
-                  									<div class="gng-knh-cn">Gọng kính râm</div>
-                  									<div class="gng-knh-cn">Tròng kính</div>
-                  									<div class="gng-knh-cn">Phụ kiện</div>
-                								</div>
-              							</div>
-              							<div class="gi-m-ca-parent">
-                								<div class="sn-phm">Chính sách</div>
-                								<div class="gng-knh-cn">Khám mắt miễn phí</div>
-                								<div class="gng-knh-cn">Bảo hành</div>
-                								<div class="gng-knh-cn">Đổi trả</div>
-                								<div class="gng-knh-cn">Vận chuyển</div>
-                								<div class="gng-knh-cn">Thu cũ - Đổi mới</div>
-                								<div class="gng-knh-cn">Chính sách bảo mật</div>
-              							</div>
-              							<div class="gi-m-ca-parent">
-                								<div class="sn-phm">Tin tức</div>
-                								<div class="gng-knh-cn">Bảo vệ mắt</div>
-                								<div class="gng-knh-cn">Kiến thức</div>
-                								<div class="gng-knh-cn">Sức khỏe</div>
-                								<div class="gng-knh-cn">Thời trang</div>
-              							</div>
+										<div class="frame-wrapper">
+											<div class="gi-m-ca-parent">
+												  <div class="sn-phm">Sản phẩm</div>
+												<a href="#"><div class="gng-knh-cn">Gọng kính cận</div></a>
+												<a href="#"><div class="gng-knh-cn">Gọng kính râm</div></a>
+												<a href="#"><div class="gng-knh-cn">Tròng kính</div></a>
+												<a href="#"><div class="gng-knh-cn">Phụ kiện</div></a>												
+											</div>
+									  </div>
+									  <div class="gi-m-ca-parent">
+											<div class="sn-phm">Chính sách</div>
+											<a href="#"><div class="gng-knh-cn">Khám mắt miễn phí</div></a>
+											<a href="#"><div class="gng-knh-cn">Bảo hành</div></a>
+											<a href="#"><div class="gng-knh-cn">Đổi trả</div></a>
+											<a href="#"><div class="gng-knh-cn">Vận chuyển</div></a>
+											<a href="#"><div class="gng-knh-cn">Thu cũ - Đổi mới</div></a>
+											<a href="#"><div class="gng-knh-cn">Chính sách bảo mật</div>
+									  </div></a>
+									  <div class="gi-m-ca-parent">
+											<div class="sn-phm">Tin tức</div>
+											<a href="#"><div class="gng-knh-cn">Bảo vệ mắt</div></a>
+											<a href="#"><div class="gng-knh-cn">Kiến thức</div></a>
+											<a href="#"><div class="gng-knh-cn">Sức khỏe</div></a>
+											<a href="#"><div class="gng-knh-cn">Thời trang</div></a>
+									  </div>
             						</div>
             						<div class="dathongbao-1-parent">
               							<img class="dathongbao-1-icon" alt="" src="./public/images/dathongbao1.png">
@@ -183,7 +194,10 @@
         				</div>
         				<div class="top-icon-wrapper">
           					<div class="top-icon">
-            						<img class="icon" alt="" src="./public/images/icon.png">
+            						<img class="icon" alt="" src="./public/images/icon.png" onclick="toggleSearchBox()">
+            						<div id="search-box" style="display: none; margin-top: 10px;">
+										<input type="text" placeholder="Tìm kiếm..." style="width: 100%; padding: 5px;">
+									</div>
             						
             						<img class="icon" alt="" src="./public/images/group.png">
             						
@@ -311,7 +325,7 @@
           					<div class="sn-tng-eo-knh-wrapper">
             						<div class="sn-tng-eo">Sơn Tùng đeo kính</div>
           					</div>
-          					<div class="xem-thm">Xem thêm</div>
+          					<div class="xem-thm0">Xem thêm</div>
         				</div>
       			</div>
       			<div class="image-244-parent">
@@ -319,9 +333,11 @@
         				
         				<div class="frame-parent9">
           					<div class="sn-tng-eo-knh-wrapper">
-            						<div class="cch-chn-knh">4 Cách chọn kính phù hợp với Khuôn Mặt</div>
+            						<div class="cch-chn-knh" id="text-content">
+										4 Cách chọn kính phù hợp với khuôn mặt
+									</div>
           					</div>
-          					<div class="xem-thm">Xem thêm</div>
+          					<a href="#" id="xem-thm" onclick="showMore(event)">Xem thêm</a>
         				</div>
       			</div>
       			<div class="image-244-container">
@@ -331,10 +347,10 @@
           					<div class="sn-tng-eo-knh-wrapper">
             						<div class="gim-50-tt-container">
               							<b>Giảm 50%</b>
-              							<span class="tt-c-sn"> tất cả sản phẩm nhân ngà đại lễ 30/4 - 01/05</span>
+              							<span class="tt-c-sn" id="hidden-text"> tất cả sản phẩm nhân ngày đại lễ 30/4 - 01/05</span>
             						</div>
           					</div>
-          					<div class="xem-thm2">Xem thêm</div>
+          					<a href="#" id="toggle-text" onclick="showMore2(event)">Xem thêm</a>
         				</div>
       			</div>
     		</div>
