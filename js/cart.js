@@ -63,10 +63,12 @@ document.getElementById("checkout-button").addEventListener("click", () => {
   //check phone number and don't have special character,letter,space, length = 10
   else if (!phone.match(/^\d{10}$/)) {
     alert("Số điện thoại không hợp lệ!");
+    return;
   }
   //check email
   else if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
     alert("Email không hợp lệ!");
+    return;
   }
   // Nếu tất cả đều hợp lệ
   alert("Đơn hàng của bạn đã được đặt thành công!");
