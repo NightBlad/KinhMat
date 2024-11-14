@@ -3,91 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kính Mắt Kool - FAQs</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tra cứu đơn hàng</title>
+    <link rel="stylesheet" href="./FAQs.css">
 </head>
 <body>
 
+  <!-- Thanh khuyến mãi -->
+  <div class="promo-bar">Giảm 30% các sản phẩm dịp đại lễ 30/4 & 1/5</div>
+
+  <!-- Container lưới 12 cột -->
+  <div class="container">
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo"> <!-- Thêm logo ở đây --> </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Sản phẩm</a></li>
-                    <li><a href="#">Bộ sưu tập</a></li>
-                    <li><a href="#">Tin tức</a></li>
-                    <li><a href="#">Tra cứu đơn</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                </ul>
-            </nav>
-            <div class="cart"> <!-- Icon giỏ hàng --> </div>
-        </div>
+    <header class="header">
+      <img src="./public/images/Logo.png" alt="Logo" class="logo">
+      <nav class="nav-menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Sản phẩm</a>
+        <a href="#">Bộ sưu tập</a>
+        <a href="#">Tin tức</a>
+        <a href="#">Tra cứu đơn</a>
+        <a href="#">Liên hệ</a>
+      </nav>
+      <div class="icons">
+        <a href="#"><img src="./public/images/Icon1.png" alt="Tìm kiếm" width="24"></a>
+        <a href="#"><img src="./public/images/Icon2.png" alt="Giỏ hàng" width="24"></a>
+      </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <section class="breadcrumb">
-            <a href="#">Trang chủ</a> &gt; <span>FAQs</span>
-        </section>
+    <div class="breadcrumb">
+        <a href="#">Trang chủ</a>
+        <span>&gt;</span>
+        <a href="#">FAQS</a>
+    </div>
 
-        <section class="faq-section">
-            <h1>FAQs</h1>
 
-            <div class="faq-item">
-                <h2>Đeo kính sát tròng có hại không?</h2>
-                <p class="answer">Việc đeo kính sát tròng sẽ không gây ra bất cứ nguy hại gì nếu bạn tuân thủ đúng quy định và lời khuyên của bác sĩ...</p>
-            </div>
+    <section class="faq-section">
+        <h1>FAQs</h1>
 
-            <div class="faq-item">
-                <h2>Bị cận thị, loạn thị có đeo kính sát tròng được không?</h2>
-                <p class="answer">Trong báo cáo mới được công bố, VinaCapital cho biết, chỉ số VN-Index đã ghi nhận mức tăng trưởng 7%...</p>
-            </div>
-
-            <div class="faq-item">
-                <h2>Cần khoảng thời gian bao lâu để mắt thích ứng với lens?</h2>
-                <p class="answer">Trong báo cáo mới được công bố, VinaCapital cho biết, chỉ số VN-Index đã ghi nhận mức tăng trưởng 7%...</p>
-            </div>
-
-            <div class="faq-item">
-                <h2>Trẻ em có đeo lens được không?</h2>
-                <p class="answer">Trong báo cáo mới được công bố, VinaCapital cho biết, chỉ số VN-Index đã ghi nhận mức tăng trưởng 7%...</p>
-            </div>
-
-            <div class="faq-item">
-                <h2>Thị trường được dự báo sẽ phân hóa trong nửa cuối năm, nên mua loại biển số xe nào?</h2>
-                <p class="answer">Trong báo cáo mới được công bố, VinaCapital cho biết, chỉ số VN-Index đã ghi nhận mức tăng trưởng 7%...</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="contact-info">
-                <p><strong>Hotline:</strong> 036.8523.966</p>
-                <p><strong>Email:</strong> hotro@kinhmatkool.vn</p>
-            </div>
-            <div class="social-media">
-                <!-- Thêm icon Zalo, Facebook tại đây -->
-            </div>
-            <div class="store-info">
-                <p><strong>Store Hà Nội</strong></p>
-                <p>115 Kim Mã, Quận Ba Đình, Hà Nội</p>
-                <!-- Thêm bản đồ ở đây -->
-            </div>
-            <div class="policies">
-                <p><a href="#">Khám mắt miễn phí</a></p>
-                <p><a href="#">Bảo hành</a></p>
-                <p><a href="#">Đổi trả</a></p>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright 2024 © Bản quyền thuộc về Kính mắt Kool</p>
+        <div class="faq-item">
+            <h2>Đeo kính sát tròng có hại không?</h2>
+            <div class="answer">
+                <h2>Trả lời</h2>
+                <p>Việc đeo kính sát tròng sẽ không gây ra bất cứ nguy hại gì nếu bạn tuân thủ đúng quy định và lời khuyên của bác sĩ. Theo đó, trong quá trình sử dụng, bạn cần lưu ý vấn đề vệ sinh và bảo quản lens đúng cách để đảm bảo chất lượng lens cũng như tính an toàn khi đeo lên mắt. Ngoài ra, đeo kính sát tròng có thể làm giảm lượng oxy trao đổi đến giác mạc vì thế bạn chỉ nên đeo kính trong khoảng 10-12 tiếng và phải tháo ra trước khi đi ngủ. Trong khi đeo lens, bạn hãy dùng nước nhỏ mắt chuyên dụng trung bình 2h/lần để cấp độ ẩm cho lens và làm mắt dễ chịu hơn.</p>
             </div>
         </div>
-    </footer>
 
-</body>
-</html>
+        <div class="faq-item">
+            <h2>Bị cận thị, loạn thị có đeo kính sát tròng được không?</h2>
+            <div class="answer">
+                <h2>Trả lời</h2>
+                <p>Trong báo cáo mới được công bố, VinaCapital cho biết, chỉ số VN-Index đã ghi nhận mức tăng trưởng 7% từ đầu năm, cao hơn đôi chút so với các thị trường khu vực.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2>Cần khoảng thời gian bao lâu để mắt thích ứng với lens?</h2>
+            <div class="answer">
+                <h2>Trả lời</h2>
+                <p>Trong báo cáo mới được công bố, VinaCapital cho biết, chỉ số VN-Index đã ghi nhận mức tăng trưởng 7% từ đầu năm, cao hơn đôi chút so với các thị trường khu vực.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2>Trẻ em có đeo lens được không?</h2>
+            <div class="answer">
+                <h2>Trả lời</h2>
+                <p>Việc đeo kính sát tròng sẽ không gây ra bất cứ nguy hại gì nếu bạn tuân thủ đúng quy định và lời khuyên của bác sĩ. Theo đó, trong quá trình sử dụng, bạn cần lưu ý vấn đề vệ sinh và bảo quản lens đúng cách để đảm bảo chất lượng lens cũng như tính an toàn khi đeo lên mắt. Ngoài ra, đeo kính sát tròng có thể làm giảm lượng oxy trao đổi đến giác mạc vì thế bạn chỉ nên đeo kính trong khoảng 10-12 tiếng và phải tháo ra trước khi đi ngủ. Trong khi đeo lens, bạn hãy dùng nước nhỏ mắt chuyên dụng trung bình 2h/lần để cấp độ ẩm cho lens và làm mắt dễ chịu hơn.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <h2>Thị trường được dự báo sẽ phân hóa trong nửa cuối năm, nên mua loại biển số xe nào?</h2>
+            <div class="answer">
+                <h2>Trả lời</h2>
+                <p>Việc đeo kính sát tròng sẽ không gây ra bất cứ nguy hại gì nếu bạn tuân thủ đúng quy định và lời khuyên của bác sĩ. Theo đó, trong quá trình sử dụng, bạn cần lưu ý vấn đề vệ sinh và bảo quản lens đúng cách để đảm bảo chất lượng lens cũng như tính an toàn khi đeo lên mắt. Ngoài ra, đeo kính sát tròng có thể làm giảm lượng oxy trao đổi đến giác mạc vì thế bạn chỉ nên đeo kính trong khoảng 10-12 tiếng và phải tháo ra trước khi đi ngủ. Trong khi đeo lens, bạn hãy dùng nước nhỏ mắt chuyên dụng trung bình 2h/lần để cấp độ ẩm cho lens và làm mắt dễ chịu hơn.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Phần bổ sung -->
+    <section class="feedback-section">
+        <!-- Phần đầu tiên 6 ô -->
+        <div class="feedback-left">
+          <img src="./public/images/logo.png" alt="Logo">
+          <p>Chúng tôi luôn trân trọng và mong đợi nhận được mọi ý kiến đóng góp từ khách hàng để có thể nâng cấp trải nghiệm dịch vụ và sản phẩm tốt hơn nữa.</p>
+          <button class="feedback-button">ĐÓNG GÓP Ý KIẾN</button>
+        </div>
+  
+        <!-- Phần thứ hai 3 ô -->
+        <div class="feedback-center">
+          <div class="contact-info">
+            <img src="./public/images/Icon3.png" alt="Phone Icon">
+            <div>
+              <p>Hotline</p>
+              <h2>036.8523.966</h2>
+            </div>
+          </div>
+          <div class="contact-info">
+            <img src="./public/images/Icon4.png" alt="Email Icon">
+            <div>
+              <p>Email</p>
+              <h2>hotro@kinhmatkool.vn</h2>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Phần thứ ba 3 ô -->
+        <div class="social-links">
+          <a href="#"><img src="./public/images/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="./public/images/zalo.png" alt="Zalo"></a>
+          <a href="#"><img src="./public/images/youtube.png" alt="YouTube"></a>
+          <a href="#"><img src="./public/images/tiktok.png" alt="Tiktok"></a>
+        </div>
+      </section>
+  
+    <section class="end-section">
+        <!-- Phần bên trái 3 cột -->
+        <div class="end-left">
+          <div class="opening-hours">
+            <h2>Giờ mở cửa</h2>
+            <p>Mon - Sun: 8:30 - 22:00</p>
+          </div>
+          <div class="store-location">
+            <h2>Store Hà Nội</h2>
+            <p>115 Kim Mã, Quận Ba Đình, Hà Nội</p>
+          </div>
+          <div class="map">
+            <img src="./public/images/screenhost.png" alt="Bản đồ" />
+          </div>
+        </div>
+  
+        <!-- Phần bên phải 9 cột -->
+        <div class="end-right">
+          <!-- Phần trên chiếm 75% -->
+          <div class="end-right-top">
+            <!-- Cụm 1 -->
+            <div class="end-section-column">
+              <h2>Sản phẩm</h2>
+              <a href="#">Gọng kính cận</a>
+              <a href="#">Gọng kính râm</a>
+              <a href="#">Tròng kính</a>
+              <a href="#">Phụ kiện</a>
+            </div>
+            <!-- Cụm 2 -->
+            <div class="end-section-column">
+              <h2>Chính sách</h2>
+              <a href="#">Khám mắt miễn phí</a>
+              <a href="#">Bảo hành</a>
+              <a href="#">Đổi trả</a>
+              <a href="#">Vận chuyển</a>
+              <a href="#">Thu cũ - Đổi mới</a>
+              <a href="#">Chính sách bảo mật</a>
+            </div>
+            <!-- Cụm 3 -->
+            <div class="end-section-column">
+              <h2>Tin tức</h2>
+              <a href="#">Bảo vệ mắt</a>
+              <a href="#">Kiến thức</a>
+              <a href="#">Sức khỏe</a>
+              <a href="#">Thời trang</a>
+            </div>
+          </div>
+  
+          <!-- Phần dưới chiếm 25% -->
+          <div class="end-right-bottom">
+            <div class="logo-certification">
+              <img src="./public/images/dathongbao1.png" alt="Logo kiểm định" />
+            </div>
+            <div class="legal-info">
+              <h2>Đại diện pháp luật</h2>
+              <p>Ông Nguyễn Văn A. Ngày cấp giấy phép: 14/08/2018</p>
+              <p>Ngày hoạt động: 05/09/2029</p>
+            </div>
+          </div>
+        </div>
+    </section>
+  
+      
+    </div>  
+    <div class="end-bar">Copyright 2024 © Bản quyền thuộc về Kính mắt Kool</div>
+  
+  </body>
+  </html>
