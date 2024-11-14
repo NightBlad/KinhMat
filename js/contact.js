@@ -69,3 +69,15 @@ function toggleSearchBox() {
 
             alert("Form submitted successfully!");
         }
+
+        document.querySelectorAll('.gng-knh-cn').forEach(item => {
+            item.addEventListener('click', function() {
+                // Xóa lớp 'active' khỏi tất cả các mục
+                document.querySelectorAll('.gng-knh-cn').forEach(link => {
+                    link.classList.remove('active');
+                });
+                // Thêm lớp 'active' cho mục được nhấn
+                this.classList.add('active');
+            });
+        });
+        

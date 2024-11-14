@@ -273,11 +273,30 @@
     font-weight: 600;
 }
 .gng-knh-cn {
-    display: flex;
-    justify-content: center;
     position: relative;
-    line-height: 20px;
+    line-height: 20px;    
     color: black;
+    font-size: 17px;
+    text-decoration: none; /* Đảm bảo không có gạch dưới mặc định */
+    padding-bottom: 5px; /* Khoảng cách từ chữ tới gạch xanh */
+}
+
+/* Thêm phần gạch xanh bên dưới */
+.gng-knh-cn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Độ dày của gạch xanh */
+    background-color: #00f; /* Màu xanh của gạch */
+    transition: width 0.3s; /* Hiệu ứng mượt */
+}
+
+/* Hiển thị gạch xanh khi hover hoặc khi có lớp 'active' */
+.gng-knh-cn:hover::after,
+.gng-knh-cn.active::after {
+    width: 100%;
 }
 
 a {
@@ -561,6 +580,14 @@ a {
     padding: 0px 0px 10px;
     color: #1b87ec;
 }
+
+.trang-ch{
+    position: relative;
+    letter-spacing: 0.02em;
+    line-height: 16px;
+    color: #00f;
+}
+
 .frame-parent4 {
     display: flex;
     flex-direction: row;
