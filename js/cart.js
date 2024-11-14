@@ -60,18 +60,14 @@ document.getElementById("checkout-button").addEventListener("click", () => {
     return;
   }
 
-  // Kiểm tra định dạng số điện thoại (chỉ chứa chữ số và có 10 chữ số)
-  if (!/^\d{10}$/.test(phone)) {
-    alert("Số điện thoại phải chứa đúng 10 chữ số!");
-    return;
+  //check phone number and don't have special character,letter,space, length = 10
+  else if (!phone.match(/^\d{10}$/)) {
+    alert("Số điện thoại không hợp lệ!");
   }
-
- // Kiểm tra định dạng email (phải có "@", tên miền và kết thúc bằng đuôi hợp lệ như .com, .net, .vn, v.v.)
- if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-  alert("Email phải có định dạng hợp lệ, ví dụ: example@gmail.com!");
-  return;
-}
-
+  //check email
+  else if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+    alert("Email không hợp lệ!");
+  }
   // Nếu tất cả đều hợp lệ
   alert("Đơn hàng của bạn đã được đặt thành công!");
   // Tiến hành gửi đơn hàng ở đây
