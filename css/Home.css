@@ -2197,6 +2197,11 @@
       font-family: Raleway;
 }
 
+
+a {
+    text-decoration: none;
+}
+
 body {
       margin: 0;
       line-height: normal;
