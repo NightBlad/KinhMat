@@ -316,3 +316,91 @@ body {
     text-decoration: none;  
 }
    
+
+/* Responsive Design cho màn hình nhỏ hơn (từ 768px trở xuống) */
+@media (max-width: 600px) {
+  /* Căn chỉnh container và điều chỉnh cột cho giao diện di động */
+  .container {
+      grid-template-columns: 1fr; /* Một cột cho màn hình nhỏ */
+  }
+
+  /* Header */
+  .header {
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+      height: auto;
+  }
+
+  .nav-menu {
+      flex-direction: row;
+      gap: 10px;
+      text-align: center;
+      margin: 10px 0;
+  }
+
+  /* Logo */
+  .logo, .logo2 {
+      width: 70px;
+      height: auto;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+      grid-column: span 12;
+      padding: 0 10px;
+      margin-top: 50px;
+  }
+
+  .faq-item h2 {
+      font-size: 1em;
+  }
+
+  .answer {
+      font-size: 14px;
+      padding: 15px;
+  }
+
+  /* Phần bổ sung */
+  .feedback-section {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+  }
+
+  .feedback-left, .feedback-center, .social-links {
+      flex: 1 1 auto;
+      margin: 10px 0;
+      text-align: center;
+  }
+
+  .feedback-button {
+      width: 100%;
+      max-width: 200px;
+  }
+
+  /* Footer Section */
+  .end-section {
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+      align-items: center;
+  }
+
+  .end-left, .end-right-top, .end-right-bottom {
+      grid-column: span 12;
+      text-align: center;
+      gap: 10px;
+  }
+
+  .end-section-column {
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .end-bar {
+      font-size: 10px;
+      padding: 10px;
+      height: auto;
+  }
+}
