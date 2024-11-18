@@ -1196,7 +1196,7 @@
     font-size: 12px;
 }
 .collection {
-    width: 1440px;
+    width:100%;
     position: relative;
     background-color: #fff;
     height: 5068px;
